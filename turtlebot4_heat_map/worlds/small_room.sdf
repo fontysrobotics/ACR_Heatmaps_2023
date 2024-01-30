@@ -1,0 +1,333 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="small_room">
+    <physics name="1ms" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="ignition-gazebo-physics-system" name="ignition::gazebo::systems::Physics"></plugin>
+    <plugin filename="ignition-gazebo-user-commands-system" name="ignition::gazebo::systems::UserCommands"></plugin>
+    <plugin filename="ignition-gazebo-scene-broadcaster-system" name="ignition::gazebo::systems::SceneBroadcaster"></plugin>
+    <plugin filename="ignition-gazebo-contact-system" name="ignition::gazebo::systems::Contact"></plugin>
+    
+    <scene>
+      <grid>false</grid>
+      <background>1 0 0 1</background>
+    </scene>
+    
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.2 0.2 0.2 1</diffuse>
+            <specular>0.2 0 1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Room -->
+    <model name="wall1">
+      <pose>-2.2 -0.3 1 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 0.05 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 0.05 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.4 0.4</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall2">
+      <pose>-2.2 2.7 1 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 0.05 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 0.05 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.4 0.4</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall3">
+      <pose>0.3 1.2 1 0 0 1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 0.05 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 0.05 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.4 0.4</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall4">
+      <pose>-4.7 1.2 1 0 0 1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 0.05 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 0.05 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.4 0.4</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Table -->
+    <model name="table">
+      <pose>-3.05 0.7 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="tabletop">
+          <pose>1.5 0.3 0.8 0 0 0</pose>
+          <geometry>
+            <box><size>4 1.2 0.02</size></box>
+          </geometry>
+        </collision>
+        <visual name="tabletop">
+          <pose>1.5 0.5 0.8 0 0 0</pose>
+          <geometry>
+            <box><size>4 1.2 0.02</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+            <emmisive>1 1 1 1</emmisive>
+          </material>
+        </visual>
+
+        <collision name="leg_1">
+          <pose>0 0 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+        </collision>
+        <visual name="leg_1">
+          <pose>0 0 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+            <emmisive>1 1 1 1</emmisive>
+          </material>
+        </visual>
+
+        <collision name="leg_2">
+          <pose>1.5 0.3 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+        </collision>
+        <visual name="leg_2">
+          <pose>1.5 0.3 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+            <emmisive>1 1 1 1</emmisive>
+          </material>
+        </visual>
+
+        <collision name="leg_3">
+          <pose>0 1 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+        </collision>
+        <visual name="leg_3">
+          <pose>0 1 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+            <emmisive>1 1 1 1</emmisive>
+          </material>
+        </visual>
+
+        <collision name="leg_4">
+          <pose>1.5 0.75 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+        </collision>
+        <visual name="leg_4">
+          <pose>1.5 0.75 0.4 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.08 0.8</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+            <emmisive>1 1 1 1</emmisive>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Pillar -->
+    <model name="pillar">
+      <pose>-1.36 -0.2 1.25 0 0 0</pose>
+      <static>true</static>
+    	<link name="link">
+    	  <collision name="collision">
+          <geometry>
+            <box><size>0.33 0.125 2.5</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.33 0.125 2.5</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+            <emmisive>1 1 1 1</emmisive>
+          </material>
+        </visual>
+    	</link>
+    </model>
+
+    <!-- Wall Implants -->
+    <model name="wall implants">
+      <pose>0.22 0.7 1 0 0 0</pose>
+      <link name="link">
+        <collision name="implant_1">
+          <geometry>
+            <box><size>0.08 0.04 2</size></box>
+          </geometry>
+        </collision>
+        <visual name="implant_1">
+          <geometry>
+            <box><size>0.08 0.04 2</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+          </material>
+        </visual>
+
+        <collision name="implant_2">
+          <pose>0 1 0 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.04 2</size></box>
+          </geometry>
+        </collision>
+        <visual name="implant_2">
+          <pose>0 1 0 0 0 0</pose>
+          <geometry>
+            <box><size>0.08 0.04 2</size></box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 0 0 0</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
+
+

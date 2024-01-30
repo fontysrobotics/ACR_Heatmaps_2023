@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="office">
+  <!-- Sun -->
+  <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="hallway">
+      <pose>-4.35 0.38 0  0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://hallway.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <pose>0 0 0  0 0 0</pose>
+          <geometry>
+            <mesh><uri>file://hallway.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="plant_pot">
+      <pose>-3 8.63 0  0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://plant_pot.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://plant_pot.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Trash cans -->
+    <model name="trash_can_0">
+      <pose>-3.28 4.75 0  0 0 3.14</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://trash_can.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://trash_can.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="trash_can_1">
+      <pose>-2.87 4.75 0  0 0 3.14</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://trash_can.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://trash_can.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="trash_can_2">
+      <pose>-2.43 4.75 0  0 0 3.14</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://trash_can.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://trash_can.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Tables -->
+    <model name="table_0">
+      <pose>-6.43 3.41 0  0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="table_1">
+      <pose>-7.42 3.41 0  0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="table_2">
+      <pose>-6.43 1.63 0  0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="table_3">
+      <pose>-7.42 1.63 0  0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://table.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <!--Dividers -->
+    <model name="divider_0">
+      <pose>-6.93 2.61 0  0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://divider.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://divider.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="divider_1">
+      <pose>-6.93 0.83 0  0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://divider.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://divider.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Pillars -->
+    <model name="pillar_0">
+      <pose>-6.93 1.73 0  0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://pillar.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://pillar.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="pillar_1">
+      <pose>-7.035 -2.1 0  0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://pillar.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://pillar.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Big Table -->
+    <model name="big_table_0">
+      <pose>-9.59 -1.32 0  0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>file://big_table.dae</uri></mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>file://big_table.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Obstacles -->
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Cardboard box
+      </uri>
+      <name>cardboard_box_0</name>
+      <pose>-7.83 3.6 0.15  0 0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Cardboard box
+      </uri>
+      <name>cardboard_box_1</name>
+      <pose>-6.24 3.97 0.15  0 0 0</pose>
+    </include>
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Cardboard box
+      </uri>
+      <name>cardboard_box_2</name>
+      <pose>-5.15 3.90 0.15  0 0 0</pose>
+    </include>
+    
+    <!-- Turtlebot should be spawned in at coordinates -4.2,0.18 -->
+    
+  </world>
+</sdf>
+
